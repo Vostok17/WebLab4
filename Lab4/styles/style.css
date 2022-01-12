@@ -1,0 +1,220 @@
+*{
+    --bg-color-orange: rgb(255, 156, 62);
+    --bg-color-green: rgb(54, 168, 54);
+    --bg-color-blue: rgb(64, 185, 233);
+    --main-black-color: rgb(0, 0, 0);
+    --main-white-color: rgb(255, 255, 255);
+    --border-color: var(--main-black-color);
+    --dark-blue: rgb(0, 0, 255);
+    --dark-grey: rgb(169, 169, 169);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header, footer {
+    align-items: center;
+    background-color: var(--bg-color-blue);
+    border: 1px solid var(--border-color);
+    display: flex;
+    min-height: 10vh;
+    padding: 0 30px;
+    width: 100%;
+}
+header {
+    justify-content: flex-start;
+}
+footer {
+    justify-content: flex-end;
+}
+
+img{
+    max-width: 300px;
+    padding-right: 50px;
+}
+
+main {
+    display: flex;
+    min-height: 80vh;
+}
+
+h2{
+    background-color: var(--main-white-color);
+    border: 1px solid;
+    font-family: Shrek;
+    padding: 3px 8px;
+}
+
+nav {
+    align-items: center;
+    background-color: var(--bg-color-orange);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+article{
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+}
+
+.text-1{
+    align-items: center;
+    background-color: var(--bg-color-green);
+    display: flex;
+    flex:1;
+    justify-content: flex-start;
+}
+
+aside{
+    display: flex;
+    flex:8;
+    flex-direction: row;
+}
+
+.list-and-picture
+{
+    align-items: center;
+    background-color: var(--main-white-color);
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.picture {
+    align-items: center;
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.picture > img{
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+.list{
+    align-items: center;
+    background-color: var(--bg-color-green);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex:1;
+    justify-content: flex-start;
+    width: 100%;
+}
+.list > ol{
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-top: 10px;
+    
+}
+
+.text-2 {
+    align-items: center;
+    background-color: var(--bg-color-orange);
+    display: flex;
+    flex:1;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.text-1, .text-2, .picture{
+    border: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.text-2 {
+    height: auto;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.text-1 {
+    padding-bottom: 10px;
+}
+
+nav {
+    border: 1px solid var(--border-color);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.color {
+    padding: 10px;
+}
+
+.picture-and-dates {
+    display: flex;
+    
+}
+
+@font-face{
+    font-family: "Shrek"; 
+    font-style: normal; 
+    font-weight: normal;
+    src: url("../fonts/Shrek.ttf") format(truetype); 
+}
+
+.work {
+    display: none;
+    height: calc(80% + 50px);
+    left: 40px;
+    position: absolute;
+    top: 40px;
+    width: calc(40% + 10px);
+    z-index: 1;
+  }
+  
+  .work > .controls {
+    align-items: center;
+    background-color: var(--dark-grey);
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .work > .anim {
+    background-image: url('/Lab4/assets/backdrop.jpg');
+    border: 5px solid var(--dark-blue);
+    box-sizing: border-box;
+    height: calc(100% - 50px);
+    width: 100%;
+  }
+  
+  button {
+    margin: 5px;
+    min-width: 5%;
+  }
+  
+  .circle1 {
+    background-color: var(--bg-color-green);
+    border-radius: 50%;
+    height: 20px;
+    position: fixed;
+    width: 20px;
+  }
+
+  .circle2 {
+    background-color: var(--bg-color-orange);
+    border-radius: 50%;
+    height: 20px;
+    position: fixed;
+    width: 20px;
+  }
