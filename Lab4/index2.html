@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Lab #3</title>
         <link rel="stylesheet" href="styles/style.css" />
+        <script src="canvas.js" defer></script>
     </head>
     <body>
         <header>
@@ -33,6 +34,7 @@
                 <aside>
                     <div class="list-and-picture">
                         <div class="picture">
+                            <button class="play-button">Play</button>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Pariatur, neque magnam
@@ -43,6 +45,18 @@
                             </p>
 
                             <img src="assets/turtle.jpg" alt="turle" />
+
+                            <div class="work">
+                                <div class="controls">
+                                  <button class="close-button">Close</button>
+                                  <button class="start-button">Start</button>
+                                  <button class="reload-button">Reload</button>
+                                  <p class="log-text"></p>
+                                </div>
+                                <canvas class="anim">
+                                </canvas>
+                            </div>
+                                
                         </div>
                         <div class="list">
                             <ol>

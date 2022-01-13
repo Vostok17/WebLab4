@@ -191,7 +191,7 @@ nav {
   }
   
   .work > .anim {
-    /* background-image: url('../assets/backdrop1.jpg') url('../assets/backdrop2.jpg'); */
+    background-image: url('../assets/backdrop1.jpg');
     border: 5px solid var(--dark-blue);
     box-sizing: border-box;
     height: calc(100% - 50px);
