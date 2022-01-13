@@ -52,6 +52,21 @@ const circle1 = new Circle(0, 0, document.querySelector('.circle1'));
 const circle2 = new Circle(0, 0, document.querySelector('.circle2'));
 const work = document.querySelector('.work');
 const anim = document.querySelector('.anim');
+const topArea = document.querySelector('.texture-1');
+const bottomArea = document.querySelector('.texture-2');
+
+const checkCirclesArea = () => {
+    // check top area
+    const topBoundes = topArea.getBoundingClientRect();
+    if (circle1.bottom >= topBoundes.bottom && circle2.bottom >= topBoundes.bottom) {
+        alert("works");
+    }
+    // check bottom area
+    const bottomBoundes = bottomArea.getBoundingClientRect();
+    if (circle1.top <= bottomBoundes.top && circle2.top <= bottomArea.top) {
+        alert('works');
+    }
+}
 
 const calcDistance = () => {
     const centre1x = parseInt(circle1.el.style.top) + squareSide / 2;
@@ -71,8 +86,8 @@ playButton.addEventListener('click', () => {
     stopButton.style.display = 'none';
     reloadButton.style.display = 'none';
     work.style.display = 'block';
-    circle1.getEl().style.display = 'block';
-    circle2.getEl().style.display = 'block';
+    circle1.el.style.display = 'block';
+    circle2.el.style.display = 'block';
 
     circle1.dx = 0;
     circle1.dy = 0;
@@ -81,13 +96,15 @@ playButton.addEventListener('click', () => {
 
     const rect = anim.getBoundingClientRect();
 
+    const start = rect.left + animBorderWidth + 1;
+    const end = rect.right - animBorderWidth - squareSide;
+
     circle1.el.style.top = `${rect.top + animBorderWidth}px`;
-    const startLoc1 = (rect.right + animBorderWidth - squareSide) * Math.random();
+    const startLoc1 = start + (end - start) * Math.random();
     circle1.el.style.left = `${startLoc1}px`;
 
-    const style = `${rect.bottom - animBorderWidth - squareSide}px`;
-    circle2.el.style.top = style;
-    const startLoc2 = (rect.right - animBorderWidth - squareSide) * Math.random();
+    circle2.el.style.top = `${rect.bottom - animBorderWidth - squareSide}px`;
+    const startLoc2 = start + (end - start) * Math.random();
     circle2.el.style.left = `${startLoc2}px`;
 });
 
@@ -111,7 +128,7 @@ const moveObject = object => {
 };
 
 const controlMovement = object => {
-    const objRect = object.getEl().getBoundingClientRect();
+    const objRect = object.el.getBoundingClientRect();
     const animRect = anim.getBoundingClientRect();
 
     if (objRect.right > animRect.right - animBorderWidth) {
@@ -136,6 +153,7 @@ const controlMovement = object => {
         circle2.dx = -circle2.dx;
         circle2.dy = -circle2.dy;
     }
+    checkCirclesArea();
     moveObject(object);
 };
 
