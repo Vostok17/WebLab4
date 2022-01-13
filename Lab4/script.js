@@ -131,19 +131,19 @@ const controlMovement = object => {
     const objRect = object.el.getBoundingClientRect();
     const animRect = anim.getBoundingClientRect();
 
-    if (objRect.right > animRect.right - animBorderWidth) {
+    if (objRect.right > animRect.right - animBorderWidth + 1) {
         object.dx = -object.getdx();
     }
 
-    if (objRect.top < animRect.top + animBorderWidth) {
+    if (objRect.top < animRect.top + animBorderWidth - 1) {
         object.dy = -object.getdy();
     }
 
-    if (objRect.bottom > animRect.bottom - animBorderWidth) {
+    if (objRect.bottom > animRect.bottom - animBorderWidth + 1) {
         object.dy = -object.getdy();
     }
 
-    if (objRect.left < animRect.left + animBorderWidth) {
+    if (objRect.left < animRect.left + animBorderWidth - 1) {
         object.dx = -object.getdx();
     }
 

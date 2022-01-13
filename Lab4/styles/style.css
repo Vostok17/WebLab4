@@ -201,10 +201,12 @@ nav {
   .texture-1 {
     background-image: url('../assets/backdrop1.jpg');
     height: 50%;
+    width: 100%;
   }
   .texture-2 {
     background-image: url('../assets/backdrop2.jpg');
     height: 50%;
+    width: 100%;
   }
   
   button {
