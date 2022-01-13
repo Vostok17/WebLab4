@@ -74,18 +74,21 @@ playButton.addEventListener('click', () => {
     circle1.getEl().style.display = 'block';
     circle2.getEl().style.display = 'block';
 
+    circle1.dx = 0;
+    circle1.dy = 0;
+    circle2.dx = 0;
+    circle2.dy = 0;
+
     const rect = anim.getBoundingClientRect();
 
-    circle1.getEl().style.top = `${rect.top + animBorderWidth}px`;
-    const startLoc1 =
-        (rect.right - animBorderWidth - squareSide) * Math.random();
-    circle1.getEl().style.left = `${startLoc1}px`;
+    circle1.el.style.top = `${rect.top + animBorderWidth}px`;
+    const startLoc1 = (rect.right + animBorderWidth - squareSide) * Math.random();
+    circle1.el.style.left = `${startLoc1}px`;
 
     const style = `${rect.bottom - animBorderWidth - squareSide}px`;
-    circle2.getEl().style.top = style;
-    const startLoc2 =
-        (rect.right - animBorderWidth - squareSide) * Math.random();
-    circle2.getEl().style.left = `${startLoc2}px`;
+    circle2.el.style.top = style;
+    const startLoc2 = (rect.right - animBorderWidth - squareSide) * Math.random();
+    circle2.el.style.left = `${startLoc2}px`;
 });
 
 closeButton.addEventListener('click', () => {
@@ -93,6 +96,10 @@ closeButton.addEventListener('click', () => {
     playButton.disabled = false;
     clearInterval(squareInterval1);
     clearInterval(squareInterval2);
+    circle1.dx = 0;
+    circle1.dy = 0;
+    circle2.dx = 0;
+    circle2.dy = 0;
 });
 
 const moveObject = object => {
@@ -137,6 +144,11 @@ startButton.addEventListener('click', () => {
     reloadButton.style.display = 'none';
     stopButton.style.display = 'block';
 
+    circle1.dx = 0;
+    circle1.dy = 0;
+    circle2.dx = 0;
+    circle2.dy = 0;
+
     circle1.calcAngle();
     circle2.calcAngle();
 
@@ -150,6 +162,11 @@ stopButton.addEventListener('click', () => {
     stopButton.style.display = 'none';
     clearInterval(squareInterval1);
     clearInterval(squareInterval2);
+
+    circle1.dx = 0;
+    circle1.dy = 0;
+    circle2.dx = 0;
+    circle2.dy = 0;
 });
 
 reloadButton.addEventListener('click', () => {
@@ -168,4 +185,9 @@ reloadButton.addEventListener('click', () => {
     const startLoc2 =
         (rect.right - animBorderWidth - squareSide) * Math.random();
     circle2.style.left = `${startLoc2}px`;
+
+    circle1.dx = 0;
+    circle1.dy = 0;
+    circle2.dx = 0;
+    circle2.dy = 0;
 });

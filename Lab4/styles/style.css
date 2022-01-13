@@ -191,11 +191,20 @@ nav {
   }
   
   .work > .anim {
-    background-image: url('../assets/backdrop.jpg');
+    /* background-image: url('../assets/backdrop1.jpg') url('../assets/backdrop2.jpg'); */
     border: 5px solid var(--dark-blue);
     box-sizing: border-box;
     height: calc(100% - 50px);
     width: 100%;
+  }
+
+  .texture-1 {
+    background-image: url('../assets/backdrop1.jpg');
+    height: 50%;
+  }
+  .texture-2 {
+    background-image: url('../assets/backdrop2.jpg');
+    height: 50%;
   }
   
   button {
