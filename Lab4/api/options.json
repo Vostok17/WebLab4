@@ -1,0 +1,10 @@
+{
+    "animBorderWidth": 5,
+    "squareSide": 10,
+    "movementRadius": 1,
+    "canvasRelWidth": 0.65,
+    "canvasBorderWidth": 5,
+    "canvasRelHeight": 0.75,
+    "controlHeight": 50,
+    "squareColor": "lawngreen"
+  }
